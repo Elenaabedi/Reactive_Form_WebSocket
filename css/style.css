@@ -1,0 +1,76 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+h1{
+    color: darkmagenta;
+}
+
+/*División*/
+
+.pre-chat{
+    width: 48%;
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+
+.chat{
+    width:48%;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.distribution{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Missatges d'error*/
+
+.missatges_error{
+    border: 1px solid red;
+    height: 50px;
+    color:red;
+}
+
+/*Missatges WSocket*/
+.message{
+    border: 1px solid black;
+    min-height: 100px;
+}
+
+/*Formulari*/
+
+label{
+    font-weight: bold;
+}
+
+input, select{
+    margin-top: 5px;
+    display: block;
+    width: 300px;
+}
+
+.buttons{
+    display: flex;
+}
+
+.btn{
+    margin-right: 20px;
+    background-color: cornflowerblue;
+}
+
+/*Mapa*/
+.map { 
+    border: 1px solid black;
+    height: 200px; 
+}
+
+.error-server{
+    margin-top: 3px;
+    margin-left: 3px;
+    font-size: small;
+    color: red;
+}

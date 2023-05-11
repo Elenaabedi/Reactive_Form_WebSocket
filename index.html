@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Exercici Tizag</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Map-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <!--Script map-->
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <!--Scripts-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/onload.js" type="text/javascript"></script>
+    <script src="js/idioma.js" type="text/javascript"></script>
+    <script src="js/nickname.js" type="text/javascript"></script>
+    <script src="js/nom_domicili.js" type="text/javascript"></script>
+    <script src="js/dni.js" type="text/javascript"></script>
+    <script src="js/provincia.js" type="text/javascript"></script>
+    <script src="js/poblacio.js" type="text/javascript"></script>
+    <script src="js/ubicacio.js" type="text/javascript"></script>
+    <script src="js/validationFormSubmit.js" type="text/javascript"></script>
+    <script src="js/ws.js" type="text/javascript"></script>
+    <script>
+      // Cambiar aquí (si cal) el valor de la variable per fer les peticions ajax
+      var urlLocalhost = 'http://localhost/M06/UF4/Pt1_UF4_BermudezDiaz_Elena/';
+    </script>
+  </head>
+
+  <body>
+    <form name="formulari" id="formulari">
+      <div class="distribution">
+        <div class="pre-chat">
+          <h1>FORMULARI DE CONNEXIÓ</h1>
+          <p>Omple el formulari i connectat al chat. Veuràs la posició de tots els usuaris connectats en el mapa. </p>
+          <hr>
+          <!--Idioma-->
+          <label for="idioma" id="lidioma" name="lidioma">Idioma</label>
+          <select name="idioma" id="idioma">
+            <option value="00">Selecciona una opció</option>
+            <option value="ca">Català</option>
+            <option value="es">Espanyol</option>
+            <option value="en">Anglés</option>
+          </select>
+          <div id="idioma_error" class="error-server"></div>
+          <br />
+          <!--Nickname-->
+          <label for="nickname" id="lnickname" name="lnickname">Nickname</label>
+          <input type="text" id="nickname" name="nickname" />
+          <div id="nickname_error" class="error-server"></div>
+          <br />
+          <!--Nom-->
+          <label for="nom" id="lnom" name="lnom">Nom</label
+          ><input type="text" id="nom" name="nom" />
+          <div id="nom_error" class="error-server"></div>
+          <br />
+          <!--DNI-->
+          <label for="ldni" id="ldni" name="ldni">DNI</label
+          ><input type="text" id="dni" name="dni" />
+          <div id="dni_error" class="error-server"></div>
+          <br />
+          <!--Provincia-->
+          <label for="provincia" id="lprovincia" name="lprovincia"
+            >Província</label
+          >
+          <select name="provincia" id="provincia">
+            <option value="">Selecciona una opció</option>
+          </select>
+          <div id="provincia_error" class="error-server"></div>
+          <br />
+          <!--Població-->
+          <label for="poblacio" id="lpoblacio" name="lpoblacio"
+            >Pobliació</label
+          >
+          <select name="poblacio" id="poblacio">
+            <option value="">Selecciona una opció</option>
+          </select>
+          <div id="poblacio_error" class="error-server"></div>
+          <br />
+          <!--Domicili-->
+          <label for="domicili" id="ldomicili" name="ldomicili">Domicili</label>
+          <input type="text" id="domicili" name="domicili" />
+          <div id="domicili_error" class="error-server"></div>
+          <br />
+          <!--Ubicació-->
+          <label for="map" id="lmap" name="lmap">Mapa</label>
+          <div id="map" name="map" class="map"></div>
+          <div id="map_error" class="error-server"></div>
+          <br />
+          <!--Div missatges error-->
+          <label for="error" id="lerror" name="lerror">Errors</label>
+          <div class="missatges_error" id="missatges_error"></div>
+          <br />
+          <input class='btn' type="button" value="Connect" id="connect" disabled /><br />
+        </div>
+        <div class="chat">
+          <h1>CHAT</h1>
+          <!--Button submit-->
+          <label for="chat">Missatge a enviar pel chat</label>
+          <input type="text" id="chat" name="chat" /><br />
+
+          <div class="buttons">
+            <input class='btn' type="button" value="Enviar" id="enviar" disabled />
+            <input class='btn' type="button" value="Disconnect" id="disconnect" disabled />
+          </div>
+
+          <br />
+          <label for="error" id="lerror" name="lerror"
+            >Missatges rebuts des de Web Socket</label
+          >
+          <div name="message" id="message" class="message"></div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
